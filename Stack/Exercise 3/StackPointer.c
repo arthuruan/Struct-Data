@@ -9,10 +9,15 @@ void Push(t_node** node, int value){
         (*node)->tail = (*node)->head;
     }else{
         t_node *aux = (*node);
-        (*node)->head = aux;
+        /*(*node)->head = aux;
         while (aux->next){
             aux = aux->next;
         }
+        aux->next = (t_node*) malloc (sizeof (t_node));
+        aux->next->value = value;
+        aux->next->next = NULL;
+        (*node)->tail = aux->next;*/
+        aux = aux->tail;
         aux->next = (t_node*) malloc (sizeof (t_node));
         aux->next->value = value;
         aux->next->next = NULL;
@@ -32,6 +37,11 @@ int Pop(t_node *node){
         free(aux->next->next);
         aux->next = NULL;
         node->tail = aux;
+        /*
+        aux = aux->next->tail;
+        free(aux->tail);
+        aux->next = NULL;
+        node->tail = aux;*/
     }
 }
 
