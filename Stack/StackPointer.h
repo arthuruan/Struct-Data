@@ -9,11 +9,10 @@ typedef struct Node{
     struct Node* head;
     struct Node* tail;
     int value;
-    int top;
 }t_node;
 
 void Push(t_node** node, int value);
 
-
+int Pop(t_node** node);
 
 #endif // !STACKPOINTER_H
