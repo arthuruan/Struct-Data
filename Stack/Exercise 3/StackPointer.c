@@ -20,24 +20,24 @@ void Push(t_node** node, int value){
     }
 }
 
-int Pop(t_node **node){
-    if(!*node){
+int Pop(t_node *node){
+    if(!node){
         printf("Stack underflow!\n");
         exit(1);
     }else{
-        t_node *aux = (*node);
+        t_node *aux = node;
         while(aux->next->next){
             aux = aux->next;
         }
         free(aux->next->next);
         aux->next = NULL;
-        (*node)->tail = aux->next;
+        node->tail = aux;
     }
 }
 
 void printStack(t_node *node){
     if(!node){
-        printf("Stack empty");
+        printf("Stack empty!\n");
     }else{
         t_node *aux = node->head;
 
@@ -49,11 +49,3 @@ void printStack(t_node *node){
         }
     }    
 }
-/*
-int main(void){
-    t_node *n0 = NULL;
-
-    printStack(n0);
-
-    return 0;
-}*/

@@ -17,7 +17,7 @@ char Pop(t_stack *s){
         s->top--;
         return tmp;
     }else{
-        printf("Stack overflow!\n");
+        printf("Stack underflow!\n");
         exit(1);
     }
 }

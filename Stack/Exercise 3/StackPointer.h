@@ -12,7 +12,7 @@ typedef struct Node{
 }t_node;
 
 void Push(t_node** node, int value);
-
-int Pop(t_node** node);
+int Pop(t_node* node);
+void printStack(t_node *node);
 
 #endif // !STACKPOINTER_H
