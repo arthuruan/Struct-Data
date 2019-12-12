@@ -13,7 +13,7 @@ void Push(t_stack *s, char v){
 char Pop(t_stack *s){
     if(s->top >= 0){
         char tmp = s->v[s->top];
-        s->v[s->top] = ' ';
+        //s->v[s->top] = ' ';
         s->top--;
         return tmp;
     }else{
