@@ -1,3 +1,6 @@
+/*Exercise 3 (from the book Introduction to Algorithms. Cormen T.H. et al.):
+Implement a stack in C using a singly linked list such that the operations push and pop still take
+constant time.*/
 #include "StackPointer.h"
 
 int main(void){
