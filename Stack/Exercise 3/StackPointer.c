@@ -17,7 +17,7 @@ void Push(t_node** node, int value){
         aux->next->value = value;
         aux->next->next = NULL;
         (*node)->tail = aux->next;*/
-        aux = aux->tail;
+        aux = aux->tail;//time constant
         aux->next = (t_node*) malloc (sizeof (t_node));
         aux->next->value = value;
         aux->next->next = NULL;
@@ -26,15 +26,17 @@ void Push(t_node** node, int value){
 }
 
 int Pop(t_node *node){
+    int retrn;
     if(!node){
         printf("Stack underflow!\n");
         exit(1);
     }else{
         t_node *aux = node;
-        while(aux->next->next){
+        while(aux->next->next){//time linear
             aux = aux->next;
         }
-        free(aux->next->next);
+        retrn = aux->next->value;
+        free(aux->next);
         aux->next = NULL;
         node->tail = aux;
         /*
@@ -43,6 +45,7 @@ int Pop(t_node *node){
         aux->next = NULL;
         node->tail = aux;*/
     }
+    return retrn;
 }
 
 void printStack(t_node *node){
@@ -51,11 +54,9 @@ void printStack(t_node *node){
     }else{
         t_node *aux = node->head;
 
-        printf("%d\n",aux->value);
-
-        while (aux->next){
-            aux = aux->next;
+        while (aux){
             printf("%d\n", aux->value);
+            aux = aux->next;
         }
     }    
 }

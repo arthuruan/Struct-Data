@@ -15,8 +15,7 @@ int main(void){
     printf("this is top,  %d\n", n0->tail->value);
     printf("this is head,  %d\n", n0->head->value);
 
-    printf("Pop.\n");
-    Pop(n0);
+    printf("Pop %d\n", Pop(n0)); 
 
     printStack(n0);
 
