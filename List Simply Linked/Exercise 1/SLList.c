@@ -43,7 +43,7 @@ int Delete(t_sllist *list, int key){
             }
             return 1;
         }else if(aux == list->tail){
-            printf("Value dont exist in list!\n");
+            printf("Value doesnt exist in list!\n");
             return 0;
         }
         aux = aux->next;

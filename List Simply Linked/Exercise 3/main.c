@@ -9,9 +9,7 @@ int main(void){
     Insert(&s, 5);
     Insert(&s, 6);
 
-    printf("%d\n", *Search(s, 6));
-
-    Delete(s, 5);
+    Reverse(s);
 
     printList(s);
 
